@@ -1,0 +1,28 @@
+{
+  "name": "shortsConverter",
+  "version": "0.0.1",
+  "description": "Converts youtube shorts to actual videos",
+  "manifest_version": 2,
+  "author": "ZZZZZZ",
+  "browser_action": {
+  "default_popup": "background.html",     
+     
+      "default_title": "shortsConverter"
+  },
+  "permissions": [
+      "tabs",
+      "<all_urls>",
+      "webNavigation"
+  ],   
+  "background": {
+  "page": "background.html",
+  "persistent": true
+},
+  "content_scripts": [
+  {
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["js/content.js"],
+    "run_at": "document_end"
+  }
+]
+}
